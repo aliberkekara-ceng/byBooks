@@ -1,0 +1,6 @@
+*.exe
+*.db
+*.db-journal
+.idea/
+.vscode/
+COMMIT_PLAN.md
