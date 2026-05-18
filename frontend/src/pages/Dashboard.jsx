@@ -30,13 +30,13 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <h2>Kitap Paneli</h2>
+        <h2>Books Dashboard</h2>
         <button
           className="btn btn-primary"
           onClick={() => setIsAddModalOpen(true)}
           disabled={isLoading}
         >
-          Kitap Ekle
+          Add Book
         </button>
       </div>
 
@@ -52,7 +52,7 @@ function Dashboard() {
       {isLoading ? (
         <div className="loading-container">
           <div className="spinner"></div>
-          <p>Veriler yükleniyor...</p>
+          <p>Loading data...</p>
         </div>
       ) : (
         <div className="book-grid">
@@ -61,7 +61,7 @@ function Dashboard() {
           ))}
           {books.length === 0 && (
             <div className="empty-state">
-              <p>Henüz kitap yok. Hemen ekleyin!</p>
+              <p>No books found. Add one now!</p>
             </div>
           )}
         </div>
@@ -70,7 +70,7 @@ function Dashboard() {
       <Modal
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
-        title="Kitap Ekle"
+        title="Add Book"
       >
         {isAddModalOpen && (
           <BookForm
@@ -86,7 +86,7 @@ function Dashboard() {
           setIsEditModalOpen(false);
           setEditingBook(null);
         }}
-        title="Kitabı Düzenle"
+        title="Edit Book"
       >
         {isEditModalOpen && editingBook && (
           <BookForm
