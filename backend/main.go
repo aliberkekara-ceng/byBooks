@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend/config"
+	_ "backend/docs"
 	"backend/handlers"
 	"backend/repositories"
 	"backend/services"
@@ -10,6 +11,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func CORSMiddleware() gin.HandlerFunc {
@@ -45,6 +48,11 @@ func LoggerMiddleware() gin.HandlerFunc {
 	}
 }
 
+// @title ByFood Assignment API
+// @version 1.0
+// @description Interactive API documentation for Book CRUD and URL cleanup service.
+// @host localhost:8080
+// @BasePath /api
 func main() {
 	config.ConnectDatabase()
 
@@ -59,6 +67,8 @@ func main() {
 	r.Use(gin.Recovery())
 	r.Use(CORSMiddleware())
 	r.Use(LoggerMiddleware())
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	api := r.Group("/api")
 	{

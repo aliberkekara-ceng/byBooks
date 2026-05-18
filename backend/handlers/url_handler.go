@@ -16,6 +16,16 @@ func NewURLHandler(urlService services.URLService) *URLHandler {
 	return &URLHandler{urlService: urlService}
 }
 
+// ProcessURL godoc
+// @Summary Process URL cleanup or redirection
+// @Description Refine, canonicalize, or redirect a URL based on the designated operation type
+// @Tags url-processor
+// @Accept json
+// @Produce json
+// @Param request body models.URLRequest true "URL processing request"
+// @Success 200 {object} models.URLResponse
+// @Failure 400 {object} map[string]string
+// @Router /url-process [post]
 func (h *URLHandler) ProcessURL(c *gin.Context) {
 	var req models.URLRequest
 
