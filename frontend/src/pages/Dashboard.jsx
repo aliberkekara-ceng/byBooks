@@ -3,6 +3,7 @@ import { BookContext } from "../context/BookContext";
 import Modal from "../components/Modal";
 import BookForm from "../components/BookForm";
 import BookCard from "../components/BookCard";
+import UrlProcessor from "../components/UrlProcessor";
 
 function Dashboard() {
   const { books, addBook, updateBook, isLoading, error, clearError } =
@@ -99,6 +100,8 @@ function Dashboard() {
           />
         )}
       </Modal>
+
+      <UrlProcessor />
     </div>
   );
 }

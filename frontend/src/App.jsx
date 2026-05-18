@@ -1,8 +1,9 @@
 import React from "react";
-import { BookProvider } from "./context/BookContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
+import { BookProvider } from "./context/BookContext";
 import Dashboard from "./pages/Dashboard";
+import BookDetail from "./pages/BookDetail";
+import "./App.css";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <main className="app-content">
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/book/:id" element={<BookDetail />} />
             </Routes>
           </main>
         </div>
