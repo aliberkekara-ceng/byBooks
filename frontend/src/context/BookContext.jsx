@@ -22,7 +22,9 @@ export const BookProvider = ({ children }) => {
       const data = await response.json();
       setBooks(data);
     } catch (err) {
-      setError("Connection error: Server is unreachable. (" + err.message + ")");
+      setError(
+        "Connection error: Server is unreachable. (" + err.message + ")",
+      );
     } finally {
       setIsLoading(false);
     }
