@@ -34,9 +34,11 @@ func (s *bookService) CreateBook(input models.Book) (models.Book, error) {
 	err := s.repo.Create(&book)
 	return book, err
 }
+
 func (s *bookService) GetBookByID(id string) (models.Book, error) {
 	return s.repo.FindByID(id)
 }
+
 func (s *bookService) UpdateBook(id string, input models.Book) (models.Book, error) {
 	book, err := s.repo.FindByID(id)
 	if err != nil {
