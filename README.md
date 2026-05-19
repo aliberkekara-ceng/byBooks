@@ -102,7 +102,28 @@ byfood-latest/
 
 Ensure you have [Go (1.20+)](https://go.dev/dl/) and [Node.js (v18+)](https://nodejs.org/) installed.
 
-### 1. Launch Backend Server
+### Option A: Automated Startup (Recommended)
+
+You can run automated scripts at the project root to automatically fetch dependencies and start both servers concurrently in separate console windows.
+
+* **On Windows:**
+  Double-click the `run.bat` file in the project root, or execute:
+  ```bash
+  ./run.bat
+  ```
+
+* **On macOS / Linux:**
+  Grant execution permissions and execute the `start.sh` script:
+  ```bash
+  chmod +x start.sh
+  ./start.sh
+  ```
+
+---
+
+### Option B: Manual Step-by-Step Setup
+
+#### 1. Launch Backend Server
 1. Navigate to the `backend` directory:
    ```bash
    cd backend
@@ -117,7 +138,7 @@ Ensure you have [Go (1.20+)](https://go.dev/dl/) and [Node.js (v18+)](https://no
    ```
 4. The backend will initialize `library.db` automatically and run on **`http://localhost:8080`**.
 
-### 2. Launch Frontend Application
+#### 2. Launch Frontend Application
 1. Open a new terminal window and navigate to the `frontend` directory:
    ```bash
    cd frontend
