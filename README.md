@@ -210,3 +210,33 @@ Processes and cleanses target URLs depending on the selected execution context.
 When the backend server is running locally, you can view the fully documented interactive console to execute requests:
 
 👉 **[http://localhost:8080/swagger/index.html](http://localhost:8080/swagger/index.html)**
+
+---
+
+## 📸 Working Application Screenshots
+
+Below are screenshots demonstrating the various features, modals, and execution logs of the application.
+
+### 💻 Frontend Dashboard & Modals
+* **Dashboard Overview:** Displaying the responsive library list and the integrated URL processor utility.
+  ![Dashboard](./backend/docs/screenshots/dashboard.png)
+
+* **Add Book Modal:** Overlay modal containing the controlled form inputs and validation feedback.
+  ![Add Book Modal](./backend/docs/screenshots/add-modal.png)
+
+* **Edit Book Modal:** Pre-filled overlay modal for updating existing library entries.
+  ![Edit Book Modal](./backend/docs/screenshots/edit-modal.png)
+
+* **Book Detail Page:** Route showing details for a selected book and delete execution.
+  ![Book Detail Page](./backend/docs/screenshots/book-detail-log.png)
+
+### ⚙️ Backend Logs & API Reference
+* **Interactive Swagger Interface:** Interactive endpoint reference at `/swagger/index.html`.
+  ![Swagger Console](./backend/docs/screenshots/swagger-log.png)
+
+* **API HTTP Request Logs:** Terminal logging of HTTP methods, response codes, latencies, and client IPs.
+  ![API Logs](./backend/docs/screenshots/http-log.png)
+
+* **Automated Unit & Integration Tests:** Clean, passing executions of all backend test suites.
+  ![Test Run Logs](./backend/docs/screenshots/test-log.png)
+
