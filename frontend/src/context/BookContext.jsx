@@ -64,7 +64,10 @@ export const BookProvider = ({ children }) => {
         body: JSON.stringify(newBook),
       });
 
-      if (!response.ok) throw new Error("Add operation failed.");
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "Add operation failed.");
+      }
 
       const addedBook = await response.json();
       setBooks([...books, addedBook]);
@@ -87,7 +90,10 @@ export const BookProvider = ({ children }) => {
         body: JSON.stringify(updatedData),
       });
 
-      if (!response.ok) throw new Error("Update operation failed.");
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "Update operation failed.");
+      }
 
       const updatedBook = await response.json();
       setBooks(
@@ -114,7 +120,10 @@ export const BookProvider = ({ children }) => {
         body: JSON.stringify({ url, operation }),
       });
 
-      if (!response.ok) throw new Error("URL processing failed.");
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "URL processing failed.");
+      }
 
       const data = await response.json();
       setUrlResult(data.processed_url);
